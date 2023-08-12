@@ -1,7 +1,7 @@
 resource "azurerm_resource_group" "terraform-resource" {
   name     = "storage_account_resource_group"
   location = var.location
-  tags = local.commun_tags
+  tags     = local.commun_tags
 }
 
 resource "azurerm_storage_account" "terraform_storage_account" {
@@ -15,6 +15,6 @@ resource "azurerm_storage_account" "terraform_storage_account" {
 }
 
 resource "azurerm_storage_container" "terraform_storage_container" {
-  name                  = ""
-  storage_account_name  = azurerm_storage_account.terraform_storage_account.name
+  name                 = "imagens"
+  storage_account_name = azurerm_storage_account.terraform_storage_account.name
 }
