@@ -1,12 +1,12 @@
 resource "azurerm_resource_group" "terraform-resource" {
-  name     = ""
+  name     = "storage_account_resource_group"
   location = var.location
   tags = ""
 }
 
 resource "azurerm_storage_account" "terraform_storage_account" {
-  name                     = ""
-  resource_group_name      = ""
+  name                     = "messiasstorageaccount"
+  resource_group_name      = azurerm_resource_group.terraform-resource.name
   location                 = var.location
   account_tier             = var.account_tier
   account_replication_type = var.account_replication_type
@@ -16,5 +16,5 @@ resource "azurerm_storage_account" "terraform_storage_account" {
 
 resource "azurerm_storage_container" "terraform_storage_container" {
   name                  = ""
-  storage_account_name  = ""
+  storage_account_name  = azurerm_storage_account.terraform_storage_account.name
 }
