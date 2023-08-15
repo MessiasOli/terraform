@@ -3,3 +3,4 @@
 */*.tfstate
 */*.tfstate.backup
 *.out
+*/aws-key*
