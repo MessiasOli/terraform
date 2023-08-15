@@ -4,8 +4,6 @@ variable "location" {
   default     = "Brazil South"
 }
 
-
-
 variable "account_tier" {
   description = "Storage Account Tier on Azure"
   type        = string
